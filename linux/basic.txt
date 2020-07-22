@@ -1,0 +1,67 @@
+||     ======  ||\\   || ||    || \\   //
+||       ||    || \\  || ||    ||  \\ //
+||       ||    ||  \\ || ||    ||   \\
+||       ||    ||   \\|| ||    ||  //\\
+ ====  ======  ||    \||  = = =	  //  \\ 
+
+ 						(/) Root
+							|
+	   -----------------------------------------------------
+	  |		 |       |        |          |           |      |
+	  |		 |       |        |          |           |      |
+	 home   bin     usr      root       mnt          
+	  |              |
+	 ------        ------
+	|      |      |      |
+  nigam  manoj   bin    lib
+
+
+==>  tree command 
+
+==>  path can be relative or absolute
+	 -->  running way of code can be done using relative or absolute path
+
+==> 1. (..) parent   
+	2. (.) current  
+	3. (~) home(mount point)
+	4. (-) previous folder
+
+==> file permissions
+
+		   training.xlsx        764
+		      rwx |  r w _ | r _ _
+		       U  |    9   |  0
+		      111 |  1 1 0 | 1 0 0
+		       7  |   6    |  4 
+
+	-->  file modes  rw : 6 ,r : 4
+
+	--> check permissions in list down by ls -l
+	     ==================================================
+	    |                                                  |
+	    |  total 136	  <== total memory blocks          |
+		| -rwxr-xr-x 1 balwant balwant 8304 Jul 16 14:58 1 |
+		| -rwxr-xr-x 1 balwant balwant 8304 Jul 16 15:25 2 |
+		| -rwxr-xr-x 1 balwant balwant 8304 Jul 16 15:27 3 |
+		|                                            ^     |
+		|                                            |     |
+		|							   last access time    |
+		 ==================================================
+
+==>  shell : terminal to work with os
+			 sh (bourne)
+			 zsh
+			 csh
+			 ksh(korn)
+			 tcsh
+			 bash(bourne again shell)
+
+
+			 echo $SHELL
+
+		     man ==> manual (ex. man sleep or man 3 sleep)
+
+==> touch : used to touch the file or modify the last access time
+
+==> 
+

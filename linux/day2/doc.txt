@@ -1,0 +1,98 @@
+suppose an application is running
+-------------     fork create child process
+| .         |     
+| .         |                           ----------
+| .         |   -------->child process |          |
+| fork()    |                          |  x=100   |
+| .         |                          |          |
+| .         |                          |          |
+|           |                          ............
+-------------
+
+os is desgined in such a way that all the things are hierarchical part of processes.
+
+============================================================================
+
+cd Desktop/linux/day2
+mkdir fork && cd fork
+
+one.c
+
+#include<stdio.h>
+#include<unistd.h>
+
+void main()
+{
+	printf("namaste\n");
+	fork();
+	printf("hello i am %d\n",getpid());
+	printf("good morning\n");
+	// two lines from parent and two from child process 
+	//priority is not set
+	return;
+}
+
+====================================================================
+
+if priority is not different ,either process can run first.
+
+=================================================================4
+
+cp one.c two.c
+
+#include<stdio.h>
+#include<unistd.h>
+
+void main()
+{
+	printf("namaste\n");
+	fork();
+	printf("hello i am %d\n",getpid());
+	printf("good morning\n");
+	sleep(10);
+	return;
+}
+
+cp two.c three.c
+
+#include<stdio.h>
+#include<unistd.h>
+
+void main()
+{
+	printf("namaste\n");
+	fork();
+	printf("hello i am %d and my parent is %d\n",getpid(),getppid());
+	printf("good morning\n");
+	sleep(10);
+	return;
+}
+
+======================================================================
+cp three.c four.c
+
+#include<stdio.h>
+#include<unistd.h>
+
+void main()
+{
+	printf("namaste\n");
+	fork();
+	printf("hello i am %d and my parent is %d\n",getpid(),getppid());
+	printf("good morning\n");
+	//---------
+	//-----
+	//-----
+	//------
+	sleep(10);
+	return;
+}
+
+==============================================================
+
+cp four.c five.c
+
+when fork() finish there are two processes and get different value from fork
+fork() = 0 for child and fork()=child's id for parent
+
+to ensure child run first, let parent sleep for some time
